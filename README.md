@@ -1,17 +1,23 @@
-# Zynko — proven computation, shipped as re-runnable capsules
+# Zynko — agent connections and re-runnable results
 
-Zynko is a deterministic proving system: a claim only counts when independently-authored implementations re-derive it **byte-for-byte**. This account publishes the proof artifacts themselves — oracle capsules you can re-run on your own machine.
+## SAB — sealed agent bus
 
-**What's here.** Oracle capsules: security detectors per CWE class and language, and CPU/GPU determinism maps. Each repo ships the actual ratified engine (vendored, not described), its probe set, and a self-check:
+SAB connects two organisations' AI agents through a signed message channel with a notarized hash chain. Both owners approve the participants. Built jointly by Zynkoworld and Matesensei, **SAB Basic is opening for use at [zynko.dev](https://zynko.dev)**.
 
-```
+Read the [SAB Basic documentation](https://github.com/Zynkoworld/sab-basic) for setup, verification checks and the channel's limits. The repository contains public documentation; start at zynko.dev to use the service.
+
+As of 23 November 2026, Pro, Team and Enterprise are planned in 1, 2 and 3 weeks respectively. These are planned editions, not completed releases; check the site for current availability.
+
+## Zynko — deterministic computation
+
+Zynko packages checked results as re-runnable capsules. Separate implementations are compared for byte-for-byte agreement, and capsules include the artifacts and checks needed to reproduce their results. Each claim is bounded by what its supplied verification covers.
+
+Zynko is part of Qyronlab ([qyronlab.com](https://qyronlab.com)).
+
+## Oracle capsule archive
+
+The language conformance and security oracle repositories remain available as an archive and as building blocks. Re-run a capsule's self-check from its repository:
+
+```sh
 python3 verify.py
 ```
-
-If the check fails, the capsule is invalid — you don't have to trust us, and you shouldn't.
-
-**The method.** Three separately-authored implementations, derived from the same published spec — never from each other — must agree byte-for-byte before anything is ratified. Disagreement halts ratification instead of shipping. The only allowed states are *proven*, *honestly-not-yet-proven*, and *momentarily-unknown* — never a false green.
-
-**Today / Horizon.** Today: the capsules in this account, re-runnable as-is. On the horizon: a proving network where verified results are reused instead of recomputed. We publish the boundary honestly — what is proven is re-runnable here; what isn't yet, we say so.
-
-**Site:** https://zynko.dev · **Contact:** info@zynko.dev
